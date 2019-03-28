@@ -73,7 +73,9 @@ try:
                     print 'http://'+productName['src'].split("//")[1]
                     imageResponse = requests.get('http://'+productName['src'].split("//")[1], headers=headers)
                     if (imageResponse.status_code == 200):
-                        image = Image.open(BytesIO(imageResponse.content))
+                        img = Image.open(BytesIO(imageResponse.content))
+                        # Best size that fits really well is 137 pixels x 125 pixels
+                        image = img.resize((137,125))
                         width, height = image.size
                         if columnSize[2] < width:
                             columnSize[2] = width
@@ -101,7 +103,8 @@ try:
             
                     # Increment row number for next iteration
                     row_number += 1
-            #break
+
+                    #break                    
             
     # Adujst column sizes for aesthetics
     sheet1.set_column(0, 0, columnSize[0]+5)
