@@ -25,6 +25,6 @@ Always run this file in a new folder, as it deletes all images in current folder
   
   
 **Known issues:**  
-Sensocontrol doesn't allow access to data for some reason.  
+Sensocontrol products not listed in www.parker.com/sensors.  
   
 http://promo.parker.com/promotionsite/sensocontrol/us/en/home  
